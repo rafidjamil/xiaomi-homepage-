@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> -->
+    <link rel="stylesheet" href="mega.css" />
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+<style>
+    .support-section {
+        margin-top: 0px;
+        padding: 45px 0px;
+    }
+    
+    .support-section h1 {
+        font-size: 29px;
+        font-weight: bold;
+    }
+    /* Background setup */
+    /* Search container styling */
+    
+    .search123 {
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+        /* Adds breathing room on mobile screens */
+    }
+    
+    .search-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .search-box {
+        background: white;
+        width: 100%;
+        /* Allows it to be fluid */
+        max-width: 600px;
+        /* Keeps it from getting too large on desktop */
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        /* Ensures padding doesn't add to the width */
+        transition: border 0.3s ease;
+        /* Smooth hover transition */
+    }
+    /* Icon styling */
+    
+    .search-icon {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+        /* Prevents icon from squishing on tiny screens */
+    }
+    
+    .search-icon img {
+        height: 24px;
+        /* Slightly smaller for better balance */
+        width: 24px;
+        filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(174deg) brightness(89%) contrast(91%);
+    }
+    /* Input field styling */
+    
+    .search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 18px;
+        color: #333;
+    }
+    /* Placeholder color & Responsive Font */
+    
+    .search-box input::placeholder {
+        color: #6a6a6a;
+        font-size: 1.2rem;
+        /* Using rem for better scaling */
+    }
+    /* Hover effects */
+    
+    .search-box:hover {
+        border: 1px solid #888;
+    }
+    /* Mobile Tweaks */
+    
+    @media (max-width: 480px) {
+        .search-box {
+            height: 50px;
+            /* Slimmer bar on small phones */
+            padding: 0 15px;
+        }
+        .search-box input::placeholder {
+            font-size: 18px;
+            /* Prevents text from overflowing */
+        }
+    }
+    
+    .main-services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 38px 20px;
+        width: 100%;
+    }
+    
+    .search-container {
+        width: 100%;
+        max-width: 650px;
+        margin-bottom: 50px;
+    }
+    
+    .search-box {
+        background: #fff;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        border-radius: 10px;
+        border: 1px solid #e5e5e5;
+        transition: border-color 0.3s;
+    }
+    
+    .search-box:hover {
+        border-color: #ccc;
+    }
+    
+    .search-icon {
+        color: #999;
+        font-size: 18px;
+        margin-right: 15px;
+    }
+    
+    .search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 14px;
+        color: #333;
+    }
+    
+    .services-grid {
+        display: flex;
+        gap: 210px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .service-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        color: #333;
+        transition: color 0.3s;
+    }
+    
+    .service-item i {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .service-item span {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .service-item:hover {
+        color: #ff6a00;
+    }
+    /* --- Keep your existing styles above this line --- */
+    
+    @media (max-width: 1024px) {
+        .services-grid {
+            /* Reduce the large gap for tablets */
+            gap: 80px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .services-grid {
+            /* Reduce gap further for smaller tablets/large phones */
+            gap: 40px;
+        }
+        .service-item span {
+            font-size: 16px;
+            /* Slightly smaller text for better fit */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .services-grid {
+            /* On small phones, switch to a 2-column grid layout */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+        .service-item i {
+            font-size: 24px;
+            /* Slightly smaller icons */
+        }
+        .service-item span {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+    
+    .all-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .container12 {
+        width: 100%;
+        /* Isko 1010px se badha kar 1200px kar diya hai */
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .card {
+        width: 100%;
+        /* Card ab 1200px container ki poori width lega */
+    }
+    
+    .h-100 {
+        /* Kyunke card bada hua hai, toh image height bhi thodi balance ki hai */
+        height: 200px !important;
+        object-fit: cover;
+    }
+    
+    .py-5 {
+        padding-top: 0rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .p-4 {
+        /* Text aur border ke beech achi spacing ke liye */
+        padding: 2rem !important;
+    }
+    
+    .services-section {
+        width: 100%;
+        padding: 40px 0;
+        background-color: #f8f8f8;
+    }
+    
+    .services-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        /* Isse items mobile par khud niche aa jayenge */
+        justify-content: center;
+        gap: 40px;
+        /* Cards ke darmiyan barabar fasla */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #333;
+        min-width: 120px;
+    }
+    
+    .icon-container {
+        width: 40px;
+        /* Icon ka fixed size */
+        height: 40px;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .icon-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .service-card span {
+        font-size: 15px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    /* Hover aur Active state ka Orange color */
+    
+    .service-card:hover,
+    .service-card.active {
+        color: #ff6a00;
+    }
+    /* Agar SVG use karein to uska color change karne ke liye filter niche diya gaya hai */
+    
+    .service-card:hover .icon-container img,
+    .service-card.active .icon-container img {
+        filter: invert(48%) sepia(87%) saturate(2258%) hue-rotate(3deg) brightness(101%) contrast(105%);
+    }
+    /* --- Keep your existing styles above this line --- */
+    /* Responsive adjustments for the card section */
+    
+    @media (max-width: 991px) {
+        .container12 {
+            padding: 0 20px;
+            /* Adds margin on tablet/mobile */
+        }
+        .card {
+            max-width: 100% !important;
+            /* Ensure it doesn't overflow */
+        }
+    }
+    
+    @media (max-width: 767px) {
+        /* Adjusting the image height for mobile stacking */
+        .h-100 {
+            height: 250px !important;
+            /* Increase height for mobile visibility */
+            width: 100%;
+        }
+        /* Adjust padding for smaller screens */
+        .p-4 {
+            padding: 1.5rem !important;
+        }
+        .card-title {
+            font-size: 1.25rem;
+        }
+        .card-text.fs-5 {
+            font-size: 1rem !important;
+            /* Scale down large text */
+        }
+        /* Ensure the badge stays small */
+        .badge {
+            font-size: 13px !important;
+            padding: 5px 12px !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        /* Fine-tuning for small phones */
+        .h-100 {
+            height: 180px !important;
+        }
+        .all-cards {
+            padding-bottom: 1rem !important;
+        }
+    }
+    
+    .xm-support-docs__layout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    
+    .xm-support-docs__item {
+        justify-content: center;
+        background: #fff;
+        width: 275px;
+        height: auto;
+        min-height: 246px;
+        /* padding: 51px 20px; */
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transition: box-shadow 0.3s ease;
+    }
+    
+    .xm-support-docs__item:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .xm-support-docs__item h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    .xm-support-docs__item p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.4;
+    }
+    
+    .xm-support-docs__icon {
+        /* margin-top: 30px; */
+        display: flex;
+        justify-content: center;
+    }
+    
+    .xm-support-docs__icon img {
+        width: 84px;
+        height: 84px;
+        object-fit: contain;
+    }
+    /* --- Keep your existing styles above this line --- */
+    
+    @media (max-width: 1200px) {
+        .xm-support-docs__layout {
+            /* Reduce gap slightly for smaller desktops */
+            gap: 15px;
+            padding: 0 20px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .xm-support-docs__layout {
+            /* Allows for 2 cards side-by-side on tablets */
+            display: flex;
+            justify-content: center;
+        }
+        .xm-support-docs__item {
+            /* Calculate width to fit 2 items per row minus the gap */
+            width: calc(50% - 20px);
+            min-width: 250px;
+            padding: 30px 15px;
+        }
+    }
+    
+    @media (max-width: 580px) {
+        .xm-support-docs__item {
+            /* Switch to 1 card per row on phones */
+            width: 100%;
+            max-width: 100%;
+            min-height: auto;
+            padding: 40px 20px;
+        }
+        .xm-support-docs__item h3 {
+            font-size: 18px;
+        }
+        .xm-support-docs__icon img {
+            width: 70px;
+            /* Scale down icon for small screens */
+            height: 70px;
+        }
+    }
+    
+    .faq {
+        width: 100%;
+        max-width: 1000px;
+        background-color: #fff;
+        padding: 20px;
+        margin-top: 30px;
+        align-items: center;
+    }
+    
+    .faq-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .xm-hfaq-section {
+        background: #ffffff;
+        max-width: 1163px;
+        margin: 0 auto;
+        padding: 43px 70px;
+        margin-top: 71px;
+    }
+    
+    .xm-hfaq-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* margin-bottom: 25px; */
+    }
+    
+    ol,
+    ul {
+        padding-left: 0rem;
+    }
+    
+    .xm-hfaq-title {
+        font-size: 32px;
+        font-weight: 600;
+        color: #000;
+    }
+    
+    .xm-hfaq-link {
+        font-size: 18px;
+        color: #ff6900;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .xm-hfaq-list {
+        list-style: none;
+    }
+    
+    .xm-hfaq-list li {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.9;
+        cursor: pointer;
+    }
+    
+    .xm-hfaq-list li:hover {
+        color: #000;
+    }
+    /* --- Keep your existing styles above this line --- */
+    
+    @media (max-width: 1024px) {
+        .xm-hfaq-section {
+            padding: 40px 40px;
+            /* Reducing large side padding for tablets */
+            margin-top: 40px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .xm-hfaq-section {
+            padding: 30px 20px;
+            margin-top: 30px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .xm-hfaq-header {
+            flex-direction: column;
+            /* Stack Title and Link on mobile */
+            align-items: flex-start;
+            /* Align to the left */
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .xm-hfaq-title {
+            font-size: 24px;
+            line-height: 1.2;
+        }
+        .xm-hfaq-link {
+            font-size: 16px;
+        }
+        .xm-hfaq-list li {
+            font-size: 16px;
+            line-height: 1.6;
+            /* Tighter line height for mobile reading */
+            padding: 12px 0;
+            /* Adding space between questions instead of just line-height */
+            border-bottom: 1px solid #f0f0f0;
+            /* Optional: adds subtle separation */
+        }
+        .xm-hfaq-list li:last-child {
+            border-bottom: none;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .xm-hfaq-title {
+            font-size: 20px;
+            /* Slightly smaller for very narrow phones */
+        }
+        .xm-hfaq-list li {
+            font-size: 15px;
+        }
+    }
+    
+    .wrapper {
+        background: #ffffff;
+        max-width: 1163px;
+        margin: 0 auto;
+        padding: 43px 70px;
+        margin-top: 48px;
+    }
+    
+    .contact-card {
+        background: #ffffff;
+        height: 100px;
+        max-width: 1163px;
+        border-radius: 4px;
+        /* box-shadow: 0 0 0 1px #e6e6e6; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* padding: 0 0px; */
+    }
+    
+    .text {
+        font-size: 26px;
+        font-weight: 700;
+        color: #000;
+    }
+    
+    .text span {
+        margin-left: 10px;
+        font-weight: 400;
+    }
+    
+    .chat-icon img {
+        margin-top: 92px;
+    }
+    
+    @media (max-width: 1024px) {
+        .wrapper {
+            padding: 30px 40px;
+            /* Reduce large side padding */
+        }
+    }
+    /* Wrapper ki padding mobile par kam karein takay jagah mile */
+    
+    @media (max-width: 768px) {
+        .wrapper {
+            padding: 20px 15px !important;
+            margin-top: 20px;
+        }
+        .contact-card {
+            height: auto;
+            min-height: 80px;
+            padding: 10px 15px;
+        }
+        .text {
+            font-size: 20px;
+            /* Text thoda chota kiya mobile ke liye */
+        }
+        /* IMAGE SIZE FIX: */
+        .chat-icon img {
+            margin-top: 0 !important;
+            /* Pehle wala margin khatam kiya */
+            width: 60px !important;
+            /* Mobile par icon ki width barhai */
+            height: 60px !important;
+            /* Height barhai */
+            object-fit: contain;
+            display: block;
+        }
+    }
+    /* Bohat chotay phones ke liye (iPhone SE etc) */
+    
+    @media (max-width: 480px) {
+        .chat-icon img {
+            width: 50px !important;
+            /* Thoda sa chota balance karne ke liye */
+            height: 50px !important;
+        }
+        .text {
+            font-size: 18px;
+        }
+    }
+    
+    .xiaomi-info-wrapper {
+        display: flex;
+        gap: 11px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .xiaomi-info-card {
+        background: #ffffff;
+        height: 170px;
+        max-width: 575px;
+        width: 100%;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 65px;
+    }
+    
+    .xiaomi-info-text {
+        font-size: 28px;
+        font-weight: 700;
+        color: #000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .xiaomi-info-arrow {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .xiaomi-info-icon {
+        /* width: 48px;
+        height: 48px; */
+        /* border: 2px solid #111; */
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .xiaomi-info-icon img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+    }
+    
+    @media (max-width: 1024px) {
+        .xiaomi-info-card {
+            padding: 0 30px;
+            /* Tablet par padding thodi kam */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .xiaomi-info-wrapper {
+            gap: 15px;
+        }
+        .xiaomi-info-card {
+            height: 140px;
+            /* Card ki height thodi kam ki */
+            padding: 0 20px;
+        }
+        .xiaomi-info-text {
+            font-size: 20px;
+            /* Mobile par font size chota kiya */
+        }
+        .xiaomi-info-icon img {
+            width: 80px;
+            /* Icon size mobile ke liye adjust kiya */
+            height: 80px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .xiaomi-info-card {
+            height: 110px;
+            /* Mazeed chota for small phones */
+        }
+        .xiaomi-info-text {
+            font-size: 16px;
+        }
+        .xiaomi-info-icon img {
+            width: 60px;
+            /* Small icon for small screen */
+            height: 60px;
+        }
+        .xiaomi-info-arrow {
+            font-size: 14px;
+        }
+    }
+    
+    .social-main {
+        max-width: 1163px;
+        margin: 0 auto;
+        margin-top: 53px;
+    }
+    
+    .socialpara p {
+        font-size: 30px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 80px;
+    }
+    
+    .social-icons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .p:hover .icon-cont {
+        background-color: #FF6900;
+    }
+    
+    .p:hover p {
+        color: #FF6900;
+    }
+    
+    .social-icons>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* gap: 12px; */
+        cursor: pointer;
+    }
+    
+    .social-icons i {
+        font-size: 15px;
+        color: #f8f8f8;
+    }
+    
+    .social-icons p {
+        font-size: 18px;
+        color: #000;
+    }
+    
+    .icon-cont {
+        border-radius: 35%;
+        height: 25px;
+        width: 25px;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @media (max-width: 768px) {
+        .social-main {
+            margin-top: 40px;
+            text-align: center;
+            /* Heading ko center karne ke liye */
+        }
+        .socialpara p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            /* Gap thoda kam kiya */
+        }
+        .social-icons {
+            /* Mobile par icons ko horizontal (side-by-side) rakhte hain 
+           kyunki icons chote hain, column mein space zyada waste hogi */
+            flex-direction: row;
+            justify-content: center;
+            gap: 50px;
+            /* Icons ke beech ka gap */
+            flex-wrap: wrap;
+            /* Agar screen bohat choti ho toh niche aa jayein */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .socialpara p {
+            font-size: 20px;
+        }
+        .social-icons {
+            gap: 30px;
+            /* Chote phones ke liye gap mazeed kam kiya */
+        }
+        .social-icons p {
+            font-size: 16px;
+            /* Text size chota kiya */
+        }
+        /* Icons ko mobile par thoda bada dikhane ke liye */
+        .icon-cont {
+            height: 35px;
+            width: 35px;
+        }
+        .social-icons i {
+            font-size: 18px;
+        }
+    }
+    
+    .footer {
+        /* background: rgb(26, 26, 26);
+    color: #ccc;
+    padding: 43px; */
+        /* font-family: Arial, */
+        margin-top: 8px;
+    }
+</style>
+
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container-fluid">
+            <div class="logo-box">
+                <a href="index.html">
+                    <div class="logo-main">
+
+                        <img src="logo.png" alt="Logo" />
+
+                    </div>
+                    <div class="logo-home">
+                        <i class="bi bi-house-fill"></i>
+                    </div>
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navBar">
+                <ul class="navbar-nav nav-menu-left">
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Mobile</a></li> -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item smart-home">
+                            <a class="nav-link" href="#">Mobile</a>
+
+                            <div class="mega-menu" style="background-color: none">
+
+                                <div class="wearables-menu-wrapper-flex">
+                                    <div class="wearables-sidebar-section">
+                                        <div class="wearables-menu-item-clickable wearables-phone-main-trigger" data-category="phones">
+                                            Phones
+                                            <svg class="wearables-dropdown-arrow-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                                <path d="M6 9L1 4h10z"/>
+                            </svg>
+                                        </div>
+                                        <div class="wearables-phone-dropdown-section wearables-hidden-content">
+                                            <div class="wearables-phone-submenu-list">
+                                                <div class="wearables-menu-item-clickable wearables-active-state" data-category="xiaomi">Xiaomi Series</div>
+                                                <div class="wearables-menu-item-clickable" data-category="redmi">REDMI Series</div>
+                                                <div class="wearables-menu-item-clickable" data-category="poco">POCO Phones</div>
+                                            </div>
+                                        </div>
+                                        <div class="wearables-menu-item-clickable" data-category="tablets">Tablets</div>
+                                        <div class="wearables-menu-item-clickable" data-category="laptops">Laptops</div>
+                                    </div>
+                                    <div class="wearables-content-display-area">
+                                        <div class="wearables-products-grid-layout" id="wearables-xiaomi-content">
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone1.png" alt="Xiaomi MIX Flip" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">Xiaomi MIX Flip</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone2.png" alt="Xiaomi 15 Ultra" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">Xiaomi 15 Ultra</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone3.png" alt="Xiaomi 15T Pro" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">Xiaomi 15T Pro</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone4.png" alt="Xiaomi 15T" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">Xiaomi 15T</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone5.png" alt="Xiaomi 15" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">Xiaomi 15</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="wearables-products-grid-layout wearables-hidden-content" id="wearables-redmi-content">
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone6.png" alt="REDMI Note 14 Pro+ 5G" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">REDMI Note 14 Pro+ 5G</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone7.png" alt="REDMI Note 14 5G" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">REDMI Note 14 5G</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone8.png" alt="REDMI 15 5G" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">REDMI 15 5G</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone9.png" alt="REDMI 15C" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">REDMI 15C</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone10.png" alt="REDMI A3x" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">REDMI A3x</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="wearables-products-grid-layout wearables-hidden-content" id="wearables-poco-content">
+                                            <div class="wearables-product-card-box" style="position: relative;">
+                                                <!-- <span class="wearables-new-badge-label">New</span> -->
+                                                <img src="phone11.png" alt="POCO F8 Ultra" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">POCO F8 Ultra</div>
+                                            </div>
+                                            <div class="wearables-product-card-box" style="position: relative;">
+                                                <!-- <span class="wearables-new-badge-label">New</span> -->
+                                                <img src="phone12.png" alt="POCO F8 Pro" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">POCO F8 Pro</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone13.png" alt="POCO X7 Pro" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">POCO X7 Pro</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone14.png" alt="POCO M7" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">POCO M7</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="phone15.png" alt="POCO C85" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">POCO C85</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="wearables-products-grid-layout wearables-hidden-content" id="wearables-tablets-content">
+                                            <div class="wearables-product-card-box">
+                                                <img src="tablet1.png" alt="Xiaomi Pad 7 Pro" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">Xiaomi Pad 7 Pro</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="tablet2.png" alt="Xiaomi Pad 6S Pro 12.4" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">Xiaomi Pad 6S Pro 12.4</div>
+                                            </div>
+                                            <div class="wearables-product-card-box" style="position: relative;">
+                                                <!-- <span class="wearables-new-badge-label">New</span> -->
+                                                <img src="tablet3.png" alt="REDMI Pad 2 Pro 5G" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">REDMI Pad 2 Pro 5G</div>
+                                            </div>
+                                            <div class="wearables-product-card-box" style="position: relative;">
+                                                <!-- <span class="wearables-new-badge-label">New</span> -->
+                                                <img src="tablet4.png" alt="REDMI Pad 2 Play Bundle" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">REDMI Pad 2 Play Bundle</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="tablet5.png" alt="POCO Pad X1" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">POCO Pad X1</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="wearables-products-grid-layout wearables-hidden-content" id="wearables-laptops-content">
+                                            <div class="wearables-product-card-box">
+                                                <img src="laptop1.png" alt="Xiaomi Book 14" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">Xiaomi Book 14</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="laptop2.png" alt="REDMIBook 15" class="wearables-product-image-item">
+                                                <div class="wearables-product-name-text">REDMIBook 15</div>
+                                            </div>
+                                            <div class="wearables-product-card-box">
+                                                <img src="laptop3.png" alt="XiaomiBook S 12.4" " class="wearables-product-image-item ">
+                                <div class="wearables-product-name-text ">XiaomiBook S 12.4"</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wearables-footer-links-wrapper">
+                                    <a href="#" class="wearables-footer-link-item" id="wearables-footer-link-1">
+                                        <svg class="wearables-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
+                                        <span id="wearables-footer-text-1">Accessories</span>
+                                    </a>
+                                    <a href="#" class="wearables-footer-link-item">
+                                        <svg class="wearables-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                                        <span id="wearables-footer-text-2">All Xiaomi Series</span>
+                                    </a>
+                                </div>
+                                <!-- <div class="footer-links">
+                                    <a href="#" class="footer-link">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                </svg>
+                                        <span id="footer-text-1">Accessories</span>
+                                    </a>
+                                    <a href="#" class="footer-link">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                                        <span id="footer-text-2">All Smart Watch</span>
+                                    </a>
+                                </div> -->
+
+                            </div>
+                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">Other Link</a></li> -->
+                    </ul>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Wearables</a></li> -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item smart-home">
+                            <a class="nav-link" href="#">Wearables</a>
+
+                            <div class="mega-menu" style="background-color: none">
+
+                                <div class="menu-wrapper">
+                                    <div class="">
+                                        <div class="menu-item active" data-category="watches">Smart Watches</div>
+                                        <div class="menu-item" data-category="bands">Smart Bands</div>
+                                        <div class="menu-item" data-category="earphones">TWS Earphones</div>
+                                    </div>
+                                    <div class="content-area">
+                                        <div class="products-grid" id="watches-content">
+                                            <div class="product-card">
+                                                <img src="watch11.png" alt="Xiaomi Watch 2" class="product-image">
+                                                <div class="product-name">Xiaomi Watch 2</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="watch22.png" alt="Xiaomi Watch S4 41mm" class="product-image">
+                                                <div class="product-name">Xiaomi Watch S4 41mm</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="watch3.png" alt="REDMI Watch 5" class="product-image">
+                                                <div class="product-name">REDMI Watch 5</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="watch4.png" alt="REDMI Watch 5 Lite" class="product-image">
+                                                <div class="product-name">REDMI Watch 5 Lite</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="watch5.png" alt="REDMI Watch 4" class="product-image">
+                                                <div class="product-name">REDMI Watch 4</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="products-grid hidden" id="bands-content">
+                                            <div class="product-card">
+                                                <img src="band1.png" alt="Xiaomi Smart Band 10" class="product-image">
+                                                <div class="product-name">Xiaomi Smart Band 10</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="band2.png" alt="Xiaomi Smart Band 9 Pro" class="product-image">
+                                                <div class="product-name">Xiaomi Smart Band 9 Pro</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="band3.png" alt="Xiaomi Smart Band 9" class="product-image">
+                                                <div class="product-name">Xiaomi Smart Band 9</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="band4.png" alt="Xiaomi Smart Band 9 Active" class="product-image">
+                                                <div class="product-name">Xiaomi Smart Band 9 Active</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="band5.png" alt="Xiaomi Smart Band 8 Pro" class="product-image">
+                                                <div class="product-name">Xiaomi Smart Band 8 Pro</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="products-grid hidden" id="earphones-content">
+                                            <div class="product-card">
+                                                <img src="pod1.png" alt="Xiaomi Buds 5 Pro" class="product-image">
+                                                <div class="product-name">Xiaomi Buds 5 Pro</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="pod2.png" alt="Xiaomi OpenWear Stereo Pro" class="product-image">
+                                                <div class="product-name">Xiaomi OpenWear Stereo Pro</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="pod3.png" alt="REDMI Buds 6 Pro" class="product-image">
+                                                <div class="product-name">REDMI Buds 6 Pro</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="pod4.png" alt="REDMI Buds 6" class="product-image">
+                                                <div class="product-name">REDMI Buds 6</div>
+                                            </div>
+                                            <div class="product-card">
+                                                <img src="pod5.png" alt="Xiaomi Type-C Earphones" class="product-image">
+                                                <div class="product-name">Xiaomi Type-C Earphones</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer-links">
+                                    <a href="#" class="footer-link">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                </svg>
+                                        <span id="footer-text-1">Accessories</span>
+                                    </a>
+                                    <a href="#" class="footer-link">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                                        <span id="footer-text-2">All Smart Watch</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">Other Link</a></li> -->
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item smart-home">
+                            <a class="nav-link" href="#">Smart Home</a>
+
+                            <div class="mega-menu">
+                                <div class="mm-content">
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">TVs & HA</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Washing Machines</a></li>
+                                            <li><a href="#">Refrigerators</a></li>
+                                            <li><a href="#">Air Conditioners</a></li>
+                                            <li><a href="#">TVs</a></li>
+                                            <li><a href="#">TV Boxes/TV Sticks</a></li>
+                                            <li><a href="#">Soundbars</a></li>
+                                            <li><a href="#">Projectors</a></li>
+                                            <li><a href="#">Speakers</a></li>
+                                            <li><a href="#">Microphones</a></li>
+                                            <li><a href="#">Smart Clocks</a></li>
+                                        </ul>
+
+                                        <h3 class="mm-sub-category-title">Kitchen Appliance</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Water Dispensers</a></li>
+                                            <li><a href="#">Blenders</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Environment Appliance</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Air Purifiers</a></li>
+                                            <li><a href="#">Fans</a></li>
+                                            <li><a href="#">Heaters</a></li>
+                                            <li><a href="#">Humidifiers</a></li>
+                                            <li><a href="#">Dehumidifiers</a></li>
+                                            <li><a href="#">Temperature and Humidity Monitors</a></li>
+                                            <li><a href="#">Environment Appliances Accessories</a></li>
+                                        </ul>
+
+                                        <h3 class="mm-sub-category-title">Smart Lightings</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Indoor Lightings</a></li>
+                                            <li><a href="#">Smart Bulbs</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Vacuum Cleaners</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Robot Vacuums</a></li>
+                                            <li><a href="#">Stick Vacuums</a></li>
+                                            <li><a href="#">Wet-Dry Vacuums</a></li>
+                                            <li><a href="#">Handheld Vacuums</a></li>
+                                            <li><a href="#">Vacuum Cleaners Accessories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Cooking Appliances</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Kettles</a></li>
+                                            <li><a href="#">Air Fryers</a></li>
+                                            <li><a href="#">Cooking Robots</a></li>
+                                            <li><a href="#">Induction Cookers</a></li>
+                                            <li><a href="#">Rice Cookers</a></li>
+                                            <li><a href="#">Electrical Cookers</a></li>
+                                            <li><a href="#">Microwave Oven</a></li>
+                                            <li><a href="#">Toaster</a></li>
+                                            <li><a href="#">Coffee Machine</a></li>
+                                        </ul>
+                                        <h3 class="mm-sub-category-title">Cooking Appliances Accessories</h3>
+                                    </div>
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Home Security</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Security Cameras</a></li>
+                                            <li><a href="#">Smart Doorbells</a></li>
+                                            <li><a href="#">Smart Door Locks</a></li>
+                                            <li><a href="#">Smart Sensors & Hubs</a></li>
+                                            <li><a href="#">Smart Plugs</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">Other Link</a></li> -->
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item smart-home">
+                            <a class="nav-link" href="#">Life Style</a>
+
+                            <div class="mega-menu">
+                                <div class="mm-content">
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Outdoors</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Model Cars</a></li>
+                                            <li><a href="#">Scooters</a></li>
+                                            <li><a href="#">Air Compressors</a></li>
+                                            <li><a href="#">Camping Lantern</a></li>
+                                            <li><a href="#">Luggages</a></li>
+                                            <li><a href="#">Bags</a></li>
+                                            <li><a href="#">Glasses</a></li>
+                                        </ul>
+
+                                        <h3 class="mm-sub-category-title">Chargings</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Power Banks</a></li>
+                                            <li><a href="#">Power Adapters</a></li>
+                                            <li><a href="#">Wireless Chargings</a></li>
+                                            <li><a href="#">Cables</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Office</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Ink Pens</a></li>
+                                            <li><a href="#">Keyboards and Mouse</a></li>
+                                            <li><a href="#">Writing Tablets</a></li>
+                                            <li><a href="#">Photo Printers</a></li>
+                                            <li><a href="#">Wi-Fi Range Extenders</a></li>
+                                            <li><a href="#">Routers</a></li>
+                                            <li><a href="#">Monitors</a></li>
+                                            <li><a href="#">Power Strips</a></li>
+                                            <li><a href="#">Flash Drives</a></li>
+                                            <li><a href="#">Offices Accessories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Health & Fitness</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Scales</a></li>
+                                            <li><a href="#">Massage Guns</a></li>
+                                            <li><a href="#">Water Bottles</a></li>
+                                            <li><a href="#">Pets Care</a></li>
+                                            <li><a href="#">Clothing Care</a></li>
+                                            <li><a href="#">Soap Dispensers</a></li>
+                                            <li><a href="#">Health & Fitness Accessories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Personal Care</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Oral Care</a></li>
+                                            <li><a href="#">Hair Clippers</a></li>
+                                            <li><a href="#">Electric Shavers</a></li>
+                                            <li><a href="#">Hair Dryers</a></li>
+                                            <li><a href="#">Hair Straightener Brushes</a></li>
+                                            <li><a href="#">Personal Care Accessories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mm-column">
+                                        <h3 class="mm-category-title">Tools</h3>
+                                        <ul class="mm-link-list">
+                                            <li><a href="#">Pressure Washers</a></li>
+                                            <li><a href="#">Laser Measures</a></li>
+                                            <li><a href="#">Screwdrivers</a></li>
+                                            <li><a href="#">Flashlights</a></li>
+                                            <li><a href="#">Cordless Drills</a></li>
+                                            <li><a href="#">Selfie Sticks</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">Other Link</a></li> -->
+                    </ul>
+
+
+
+                    <li class="nav-item poco-item">
+                        <!-- <a class="nav-link" href="#">POCO</a> -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item smart-home">
+                                <a class="nav-link" href="#">POCO</a>
+
+                                <div class="mega-menu" style="background-color: none">
+
+                                    <div class="menu-wrapper">
+                                        <div class="">
+                                            <div class="menu-item active" data-category="watches">POCO F series</div>
+                                            <div class="menu-item" data-category="bands">POCO X series</div>
+                                            <div class="menu-item" data-category="earphones">POCO M series</div>
+                                            <div class="menu-item" data-category="earphones">POCO C series</div>
+
+                                        </div>
+                                        <div class="content-area">
+                                            <div class="products-grid" id="watches-content">
+                                                <div class="product-card">
+                                                    <img src="phone1.png" alt="Xiaomi Watch 2" class="product-image">
+                                                    <div class="product-name">Xiaomi Watch 2</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="phone2.png" alt="Xiaomi Watch S4 41mm" class="product-image">
+                                                    <div class="product-name">Xiaomi Watch S4 41mm</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="phone3.png" alt="REDMI Watch 5" class="product-image">
+                                                    <div class="product-name">REDMI Watch 5</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="phone4.png" alt="REDMI Watch 5 Lite" class="product-image">
+                                                    <div class="product-name">REDMI Watch 5 Lite</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="phone5.png" alt="REDMI Watch 4" class="product-image">
+                                                    <div class="product-name">REDMI Watch 4</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="products-grid hidden" id="bands-content">
+                                                <div class="product-card">
+                                                    <img src="band1.png" alt="Xiaomi Smart Band 10" class="product-image">
+                                                    <div class="product-name">Xiaomi Smart Band 10</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="band2.png" alt="Xiaomi Smart Band 9 Pro" class="product-image">
+                                                    <div class="product-name">Xiaomi Smart Band 9 Pro</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="band3.png" alt="Xiaomi Smart Band 9" class="product-image">
+                                                    <div class="product-name">Xiaomi Smart Band 9</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="band4.png" alt="Xiaomi Smart Band 9 Active" class="product-image">
+                                                    <div class="product-name">Xiaomi Smart Band 9 Active</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="band5.png" alt="Xiaomi Smart Band 8 Pro" class="product-image">
+                                                    <div class="product-name">Xiaomi Smart Band 8 Pro</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="products-grid hidden" id="earphones-content">
+                                                <div class="product-card">
+                                                    <img src="pod1.png" alt="Xiaomi Buds 5 Pro" class="product-image">
+                                                    <div class="product-name">Xiaomi Buds 5 Pro</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="pod2.png" alt="Xiaomi OpenWear Stereo Pro" class="product-image">
+                                                    <div class="product-name">Xiaomi OpenWear Stereo Pro</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="pod3.png" alt="REDMI Buds 6 Pro" class="product-image">
+                                                    <div class="product-name">REDMI Buds 6 Pro</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="pod4.png" alt="REDMI Buds 6" class="product-image">
+                                                    <div class="product-name">REDMI Buds 6</div>
+                                                </div>
+                                                <div class="product-card">
+                                                    <img src="pod5.png" alt="Xiaomi Type-C Earphones" class="product-image">
+                                                    <div class="product-name">Xiaomi Type-C Earphones</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer-links">
+                                        <a href="#" class="footer-link">
+                                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                                            <span id="footer-text-1">Accessories</span>
+                                        </a>
+                                        <a href="#" class="footer-link">
+                                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                                            <span id="footer-text-2">All Smart Watch</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="#">Other Link</a></li> -->
+                        </ul>
+                        <img class="poco-hover-image" src="poco.png" alt="POCO" />
+
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav nav-menu-right">
+                    <li class="nav-item"><a class="nav-link" href="#">Discover</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
+                </ul>
+
+                <div class="icons">
+                    <img src="ivon.svg" alt="Search" />
+                    <img src="person.svg" alt="Profile" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="support-section">
+        <h1>Xiaomi Support</h1>
+    </div>
+    <div class="search123">
+
+        <div class="search-container">
+            <div class="search-box">
+                <i class="search-icon"> <img src="ivon.svg" alt="Search" /></i>
+                <input type="text" placeholder="Search for topics">
+            </div>
+        </div>
+    </div>
+
+    <section class="main-services">
+
+
+        <div class="services-grid">
+            <div class="service-item active">
+                <i class="fa-regular fa-face-smile"></i>
+                <span>Account Service</span>
+            </div>
+            <div class="service-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span>Find My Device</span>
+            </div>
+            <div class="service-item">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span>Warranty Policy</span>
+            </div>
+            <div class="service-item">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>User Guide</span>
+            </div>
+        </div>
+    </section>
+    <section class="all-cards py-5">
+        <div class="container12">
+            <div class="card mb-3 border-0 shadow-sm" style="max-width: 1163px; border-radius: 15px; overflow: hidden;">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-7">
+                        <div class="card-body p-4">
+                            <span class="badge border border-success text-success mb-3 px-3 py-2" style="border-radius: 8px; font-weight: bold; font-size: 15px; background: #90ee9040;">
+                            Recommend
+                        </span>
+                            <h4 class="card-title fw-bold mb-2">Xiaomi Support Facebook</h4>
+                            <p class="card-text text-secondary fs-5">
+                                We at Xiaomi Support Global Official listen to your voice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="support-facebook.png" class="img-fluid h-100" alt="..." style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container12">
+            <div class="card mb-3 border-0 shadow-sm" style="max-width: 1163px; border-radius: 15px; overflow: hidden;">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-7">
+                        <div class="card-body p-4">
+                            <span class="badge border border-success text-success mb-3 px-3 py-2" style="border-radius: 8px; font-weight: bold; font-size: 15px; background: #90ee9040;">
+                            Recommend
+                        </span>
+                            <h4 class="card-title fw-bold mb-2">International Warranty Service</h4>
+                            <p class="card-text text-secondary fs-5">
+                                Enjoy the warranty service at all available countries/regions
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="international.png" class="img-fluid h-100" alt="..." style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container12">
+            <div class="card mb-3 border-0 shadow-sm" style="max-width: 1163px; border-radius: 15px; overflow: hidden;">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-7">
+                        <div class="card-body p-4">
+                            <span class="badge border border-success text-success mb-3 px-3 py-2" style="border-radius: 8px; font-weight: bold; font-size: 15px; background: #90ee9040;">
+                            Recommend
+                        </span>
+                            <h4 class="card-title fw-bold mb-2">Accessibility</h4>
+                            <p class="card-text text-secondary fs-5">
+                                Bridging the text divide to achieve information equality
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="Accessibility.png" class="img-fluid h-100" alt="..." style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container12">
+            <div class="card mb-3 border-0 shadow-sm" style="max-width: 1163px; border-radius: 15px; overflow: hidden;">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-7">
+                        <div class="card-body p-4">
+                            <span class="badge border border-success text-success mb-3 px-3 py-2" style="border-radius: 8px; font-weight: bold; font-size: 15px; background: #90ee9040;">
+                            Recommend
+                        </span>
+                            <h4 class="card-title fw-bold mb-2">Xiaomi Self-Repair Service</h4>
+                            <p class="card-text text-secondary fs-5">
+                                Repair your Xiaomi device yourself
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="Self-Repair Service.jpg" class="img-fluid h-100" alt="..." style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container12">
+            <div class="card mb-3 border-0 shadow-sm" style="max-width: 1163px; border-radius: 15px; overflow: hidden;">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-7">
+                        <div class="card-body p-4">
+                            <span class="badge border border-success text-success mb-3 px-3 py-2" style="border-radius: 8px; font-weight: bold; font-size: 15px; background: #90ee9040;">
+                            Recommend
+                        </span>
+                            <h4 class="card-title fw-bold mb-2">Environmental Social Governance</h4>
+                            <p class="card-text text-secondary fs-5">
+                                Xiaomi is committed to drive a more sustainable economy
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="Environmental.png" class="img-fluid h-100" alt="..." style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="xm-support-docs__layout">
+
+
+        <div class="xm-support-docs__item">
+            <h3>Scooter Safety Notice &gt;</h3>
+            <p>Mi M365 Electric Scooter </p>
+            <div class="xm-support-docs__icon">
+                <img src="https://i05.appmifile.com/582_operator_cn/03/11/2022/be50372613e586c169d08fe0bdecf7ab!320x320.png" alt="icon" />
+            </div>
+        </div>
+
+
+        <div class="xm-support-docs__item">
+            <h3>RF Exposure &gt;</h3>
+            <p>For both Xiaomi and redmi phone</p>
+            <div class="xm-support-docs__icon">
+                <img src="	https://i05.appmifile.com/687_operator_cn/03/11/2022/27cff48223911b9a8d3f54bfcd39969d!320x320.png" alt="icon" />
+            </div>
+        </div>
+
+
+        <div class="xm-support-docs__item">
+            <h3>Find DOC &gt;</h3>
+            <p>Declaration of conformity</p>
+            <div class="xm-support-docs__icon">
+                <img src="	https://i05.appmifile.com/188_operator_cn/03/11/2022/093c550e5aadff1bcd9bb7f9bd5df907!320x320.png" alt="icon" />
+            </div>
+        </div>
+
+
+        <div class="xm-support-docs__item">
+            <h3>Check AERS &gt;</h3>
+            <p>Android Enterprise </p>
+            <div class="xm-support-docs__icon">
+                <img src="https://i05.appmifile.com/383_operator_cn/03/11/2022/09edc5f077afec4906c55e80352f0bf3!320x320.png" alt="icon" />
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="xm-hfaq-section">
+
+
+        <div class="xm-hfaq-header">
+            <h2 class="xm-hfaq-title">High frequency FAQ</h2>
+            <a href="#" class="xm-hfaq-link">Learn more &gt;</a>
+        </div>
+
+
+        <ul class="xm-hfaq-list">
+            <li>Why does Xiaomi Offline Communication fail to work when reopened after being cleared from the background?</li>
+            <li>Why isn't the contact information fully shown on the Xiaomi Offline Communication call interface?</li>
+            <li>What to do if the Xiaomi Offline Communication fails to connect?</li>
+            <li>Why does the actual communication distance of Xiaomi Offline Communication not reach the advertised distance?</li>
+            <li>What are the core technical pillars of Xiaomi Offline Communication?</li>
+            <li>Why is the call quality of Xiaomi Offline Communication slightly lower than that of a standard SIM card call?</li>
+            <li>Why doesn't the Xiaomi Offline Communication support connecting Bluetooth earphones for calls?</li>
+        </ul>
+
+
+    </section>
+    <div class="wrapper">
+        <div class="contact-card">
+            <div class="text">
+                Contact us <span></span>
+            </div>
+
+            <div class="chat-icon">
+                <img src="msg.png" />
+            </div>
+        </div>
+    </div>
+    <div class="xiaomi-info-wrapper">
+
+        <div class="xiaomi-info-card">
+            <div class="xiaomi-info-text">
+                Terms and policy
+                <i class="fa-solid fa-greater-than xiaomi-info-arrow"></i>
+            </div>
+
+            <div class="xiaomi-info-icon">
+                <img src="trem.png" alt="terms icon">
+            </div>
+        </div>
+
+
+        <div class="xiaomi-info-card">
+            <div class="xiaomi-info-text">
+                About Xiaomi
+                <i class="fa-solid fa-greater-than xiaomi-info-arrow"></i>
+            </div>
+
+            <div class="xiaomi-info-icon">
+                <img src="about.png" alt="about icon">
+            </div>
+        </div>
+
+    </div>
+    <!-- <section class="xm-support-links">
+
+
+
+        <div class="xm-support-card xm-support-links__full">
+            <div class="xm-support-card__title">Contact us &gt;</div>
+            <div class="xm-support-card__icon">
+                <img src="msg.png" alt="contact icon" />
+            </div>
+        </div>
+
+
+
+        <div class="xm-support-card">
+            <div class="xm-support-card__title">Terms and policy &gt;</div>
+            <div class="xm-support-card__icon">
+                <img src="trem.png" alt="terms icon" />
+            </div>
+        </div>
+
+
+
+        <div class="xm-support-card">
+            <div class="xm-support-card__title">About Xiaomi &gt;</div>
+            <div class="xm-support-card__icon">
+                <img src="about.png" alt="about icon" />
+            </div>
+        </div>
+
+
+    </section> -->
+    <section class="social-main">
+        <div class="socialpara">
+            <p>Follow us at social media</p>
+        </div>
+
+
+        <div class="social-icons">
+            <div class="p twitter">
+                <div class="icon-cont">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <p>Instgaram</p>
+            </div>
+
+
+            <div class="p youutube">
+                <div class="icon-cont">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <p>Youtube</p>
+            </div>
+
+
+            <div class="p Facebook">
+                <div class="icon-cont">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <p>Facebook</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <div class="footer-sections">
+
+            <div class="footer-col">
+                <h3>SUPPORT</h3>
+                <a href="#">Contact us</a>
+                <a href="#">User Guide</a>
+                <a href="#">Warranty</a>
+                <a href="#">International Warranty</a>
+                <a href="#">EU Declaration of Conformity</a>
+                <a href="#">Scooter Safety Notice</a>
+                <a href="#">Android Enterprise Recommended</a>
+                <a href="#">Digital Services Act</a>
+                <a href="#">Data Act</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>ABOUT US</h3>
+                <a href="#">Xiaomi</a>
+                <a href="#">Leadership Team</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">User Agreement</a>
+                <a href="#">Integrity & Compliance</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">ESG and Sustainability</a>
+                <a href="#">Trust Center</a>
+                <a href="#">Xiaomi Accessibility</a>
+                <a href="#">Xiaomi HyperOS</a>
+                <a href="#">Xiaomi Accessibility Conformance Report</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>XIAOMI PROJECTS</h3>
+                <a href="#">Xiaomi Renovation</a>
+                <a href="#">Xiaomi POP Run 2025</a>
+                <a href="#">Xiaomi Imagery Awards 2025</a>
+            </div>
+
+            <div class="footer-col social-col">
+                <h3>Follow Xiaomi</h3>
+
+                <div class="iconss">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-youtube"></i>
+
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                </div>
+
+                <h4>Enter your email address to subscribe to our newsletters</h4>
+
+                <div class="email-box">
+                    <input type="email" placeholder="Enter email address">
+                    <button><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-b">
+                <p>Copyright © 2010 - 2025 Xiaomi. All Rights Reserved</p>
+
+                <div class="bottom-links">
+                    <a href="#">Cookie settings</a>
+                    <a class="line">|</a>
+                    <a href="#">Cookie Policy </a>
+                    <a class="line">|</a>
+                    <a href="#"> Sitemap</a>
+                </div>
+            </div>
+
+            <div class="lang">Global / English <i class="fa-solid fa-globe"></i></div>
+        </div>
+    </div>
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

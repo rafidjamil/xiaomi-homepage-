@@ -1,0 +1,492 @@
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+    height: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Essential for positioning the mega menu */
+    height: 100%;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+
+/* .nav-item:hover .nav-link,
+.nav-link.active {
+    color: #ff6900;
+    border-bottom: 2px solid #ff6900;
+} */
+
+
+/* -------------------- MEGA MENU STYLING (UNIQUE CLASSES) -------------------- */
+
+.mega-menu {
+    position: fixed;
+    top: 47px;
+    left: 0;
+    /* transform: translateX(-50%); */
+    width: 100%;
+    /* max-width: 132vw; */
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    padding: 30px 40px;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    pointer-events: none;
+}
+
+
+/* Show Mega Menu on Hover */
+
+.nav-item.smart-home:hover .mega-menu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* Mega Menu Columns - NEW CLASSES: mm-content, mm-column */
+
+.mm-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 columns */
+    gap: 30px;
+}
+
+.mm-column {
+    /* Optional: If you want visual separation, use border-right */
+    /* border-right: 1px solid #eee; */
+    padding-right: 20px;
+}
+
+.mm-column:last-child {
+    border-right: none;
+}
+
+
+/* Category Title - NEW CLASS: mm-category-title */
+
+.mm-category-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+
+/* Sub Category Title - NEW CLASS: mm-sub-category-title */
+
+.mm-sub-category-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+
+/* Links List - NEW CLASS: mm-link-list */
+
+.mm-link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mm-link-list a {
+    display: block;
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    padding: 5px 0;
+    transition: color 0.15s;
+}
+
+.mm-link-list a:hover {
+    color: #ff6900;
+    text-decoration: underline;
+}
+
+
+/* Mobile adjustment for smaller screens */
+
+@media (max-width: 1250px) {
+    .mega-menu {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .mm-content {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on mobile/tablet */
+        gap: 20px;
+    }
+    .mega-menu {
+        padding: 20px;
+    }
+    .nav-list {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-list {
+        gap: 10px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+}
+
+
+/* ------------------- */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.sidebar {
+    width: 200px;
+    background: white;
+    border-right: 1px solid #e0e0e0;
+    padding: 0 0;
+}
+
+.menu-item {
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    font-weight: bold;
+    position: relative;
+}
+
+.menu-item:hover {
+    /* background: #f8f8f8; */
+    color: #ff6900;
+}
+
+.menu-item.active {
+    color: #ff6900;
+    /* background: #fff5f0; */
+}
+
+.content-area {
+    flex: 1;
+    padding: 40px;
+    min-height: 400px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.product-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.product-card:hover .product-image {
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(-8px);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.product-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 20px 40px;
+    /* border-top: 1px solid #e0e0e0;
+    background: #fafafa; */
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    background-color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ff6900;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ------------------------ */
+
+.wearables-navbar-list {
+    list-style: none;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+}
+
+.wearables-nav-item-main {
+    position: relative;
+}
+
+.wearables-nav-link-text {
+    display: block;
+    padding: 15px 30px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.wearables-nav-link-text:hover {
+    color: #ff6900;
+}
+
+.wearables-mega-menu-container {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    z-index: 1000;
+    min-width: 1000px;
+}
+
+.wearables-nav-item-main:hover .wearables-mega-menu-container {
+    display: block;
+}
+
+.wearables-menu-wrapper-flex {
+    display: flex;
+    position: relative;
+}
+
+.wearables-sidebar-section {
+    width: 200px;
+    background: white;
+    border-right: 1px solid #e0e0e0;
+    padding: 0 0;
+}
+
+.wearables-menu-item-clickable {
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+}
+
+.wearables-menu-item-clickable:hover {
+    color: #ff6900;
+}
+
+.wearables-menu-item-clickable.wearables-active-state {
+    color: #ff6900;
+}
+
+.wearables-content-display-area {
+    flex: 1;
+    padding: 40px;
+    min-height: 400px;
+}
+
+.wearables-products-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    opacity: 0;
+    animation: wearablesFadeInAnimation 0.4s ease forwards;
+}
+
+@keyframes wearablesFadeInAnimation {
+    to {
+        opacity: 1;
+    }
+}
+
+.wearables-product-card-box {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wearables-product-card-box:hover .wearables-product-image-item {
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(-8px);
+}
+
+.wearables-product-image-item {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.wearables-product-name-text {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.wearables-footer-links-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 20px 40px;
+}
+
+.wearables-footer-link-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    background-color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.wearables-footer-link-item:hover {
+    color: #ff6900;
+}
+
+.wearables-icon-svg {
+    width: 18px;
+    height: 18px;
+}
+
+.wearables-hidden-content {
+    display: none;
+}
+
+.wearables-new-badge-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff6900;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.wearables-phone-dropdown-section {
+    background: white;
+    margin-top: 5px;
+}
+
+.wearables-phone-submenu-list {
+    padding-left: 20px;
+}
+
+.wearables-phone-submenu-list .wearables-menu-item-clickable {
+    padding: 10px 30px;
+    font-weight: normal;
+}
+
+.wearables-dropdown-arrow-icon {
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.wearables-dropdown-arrow-icon.wearables-arrow-open {
+    transform: rotate(180deg);
+}
